@@ -375,8 +375,8 @@
 @media (max-width: 768px) {
     .game-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* عرض لعبتين في كل صف */
-        gap: 10px; /* إضافة مسافة بين الألعاب */
+        grid-template-columns: repeat(3, 1fr); /* عرض لعبتين في كل صف */
+        gap: 8px; /* إضافة مسافة بين الألعاب */
     }
 
     .game {
@@ -385,7 +385,7 @@
     }
 
     .game img {
-        width: 100%; /* ضبط عرض الصورة بحيث تملأ العنصر */
+        width: 40%; /* ضبط عرض الصورة بحيث تملأ العنصر */
         height: 180px; /* تحديد ارتفاع مناسب */
         object-fit: cover; /* منع تشوه الصورة */
         border-radius: 10px; /* إضافة زوايا ناعمة */
@@ -396,13 +396,16 @@
 @media (max-width: 480px) {
     .game-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* تأكيد عرض لعبتين في كل صف */
+        grid-template-columns: repeat(1, 1fr); /* تأكيد عرض لعبتين في كل صف */
         gap: 4px; /* تقليل المسافة بين الألعاب */
     }
-
+    .game {
+        width: 70%; /* جعل اللعبة تأخذ كل عرض الخلية */
+        text-align: center; /* توسيط المحتوى داخل اللعبة */
+    }
     .game img {
-        width: 60%; /* جعل الصورة تمتد بالكامل داخل العنصر */
-        height: 160px; /* تصغير الارتفاع قليلاً للشاشات الأصغر */
+        width: 100%; /* جعل الصورة تمتد بالكامل داخل العنصر */
+        height: 100px; /* تصغير الارتفاع قليلاً للشاشات الأصغر */
     }
 }
 
