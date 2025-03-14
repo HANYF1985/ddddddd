@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS4GAMEARABIC</title>
+  <style>
+    body {  
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      background-color: #140e0e;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* تصميم الهيدر */
+    .header {
+      background: #0e1329;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo img {
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    .site-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* تصميم الأقسام */
+    .sections {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .section-box {
+      background: #2c2c2c;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 69, 0, 0.5);
+      transition: background 0.3s;
+    }
+
+    .section-box:hover {
+      background: #ff4500;
+    }
+
+    /* تصميم السلايدر */
+    .slider {
+      width: 90%;
+      max-width: 1000px;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px 2px #ff4500;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: auto;
+      box-sizing: border-box;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      border: none;
+      font-size: 20px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* تصميم الجدول */
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 800px;
+      background: #2c2c2c;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #444;
+    }
+
+    th {
+      background-color: #ff4500;
+      color: white;
+    }
+
+    td {
+      background-color: #3a3a3a;
+      color: white;
+    }
+
+    td:hover {
+      background-color: #555;
+    }
+
+    /* تصميم العنوان */
+    .game-title {
+      font-size: 33px;
+      font-weight: bold;
+      color: #ff4500;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    @media (max-width: 768px) {
+      .slider {
+        height: 250px;
+      }
+      table {
+        width: 100%;
+      }
+    }
+
+    .download-buttons-container {
+      margin: 20px;
+      text-align: center;
+    }
+    .centered-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+      margin: 10px 0;
+    }
+
+    .zr-download {
+      font-size: 14px; /* تقليص الحجم */
+      padding: 8px 15px;
+      margin: 5px 0;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .zr-download:hover {
+      transform: scale(1.05);
+    }
+
+    /* ألوان خاصة لكل رابط تحميل */
+    .game-part {
+      background-color: #233243; /* أزرق */
+      color: white;
+    }
+    .game-part:hover {
+      background-color: #0056b3;
+    }
+
+    .pkg-download {
+      background-color: #233243; /* أخضر */
+      color: white;
+    }
+    .pkg-download:hover {
+      background-color: #218838;
+    }
+
+    .arabic-patch {
+      background-color: #233243; /* أصفر */
+      color: white;
+    }
+    .arabic-patch:hover {
+      background-color: #e0a800;
+    }
+    .DLC-download {
+      background-color: #233243; /* أصفر */
+      color: white;
+    }
+    .DLC-download:hover {
+      background-color: #250d46;
+    }
+    .modpass-download {
+      background-color: #041028; /* أصفر */
+      color: white;
+    }
+    .modpass-download:hover {
+      background-color: #031944;
+    }
+    /* زر الانتقال إلى الفيديو */
+    .scroll-to-video {
+      font-size: 14px; /* تقليص الحجم */
+      background-color: #ff4500;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .scroll-to-video:hover {
+      background-color: #0e1329;
+      transform: scale(1.05);
+    }
+
+    /* وصف اللعبة */
+    .description-container {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #140e0e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 2px #ff4500;
+      text-align: justify;
+      direction: rtl; /* جعل النص من اليمين إلى اليسار */
+    }
+    .description p {
+      margin: 15px 0;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* مراجعات المستخدمين */
+    .user-reviews {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #140e0e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 2px #ff4500;
+      text-align: center; /* جعل المراجعات في الوسط */
+    }
+    .user-reviews h2 {
+      font-size: 20px;
+      color: #ff4500;
+      margin-bottom: 15px;
+    }
+    .user-reviews p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .video-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 80%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+        .scroll-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .scroll-button:hover {
+            background-color: #0056b3;
+        }
+  /* حركة السهم */
+  @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px); /* ارتفاع السهم */
+        }
+        60% {
+            transform: translateY(-5px); /* ارتفاع أقل للسهم */
+        }
+    }
+
+    /* نص التوجيه */
+    .download-arrow p {
+        font-size: 25px;
+        margin-top: 5px; /* مسافة بين السهم والنص */
+        color: #fc0606; /* لون النص */
+    }
+
+   /* زر الانتقال إلى الفيديو */
+.scroll-to-video {
+    display: inline-block;
+    background-color: #ff4500; /* لون الزر */
+    color: white;
+    padding: 10px 20px; /* حجم الزر */
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* مسافة بين الزر والمحتوى */
+    transition: background-color 0.3s ease;
+    cursor: default; /* إزالة ظهور المؤشر */
+}
+
+.scroll-to-video:hover {
+    background-color: #0e1329; /* لون الزر عند التمرير */
+    cursor: default; /* التأكد من عدم تغيير المؤشر عند التمرير */
+}
+
+    /* سهم التحميل */
+    .download-arrow {
+        position: relative;
+        text-align: center;
+        margin-top: 10px; /* مسافة بين الفيديو والسهم */
+    }
+
+    .arrow {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid #ff0000; /* لون السهم */
+        margin: 0 auto; /* مركز السهم */
+        animation: bounce 1s infinite; /* الحركة */
+    }
+       
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-bar input {
+                width: 80%;
+            }
+
+            .slider {
+                height: auto;
+            }
+
+            .game img {
+                height: 130px;
+            }
+
+            .section-box {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+        .logo img {
+    height: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* تكبير اللوجو عند التمرير */
+    opacity: 0.8; /* تقليل الشفافية قليلاً */
+}
+/* تصميم الأيقونات الاجتماعية */
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+
+.logo {
+ 
+  flex: 0; /* يضمن أن الشعار يكون على اليسار */
+  justify-content: flex-end;
+}
+
+
+.site-title {
+  flex: 2; /* يضمن أن العنوان يبقى في المنتصف */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1; /* يضمن أن الأيقونات تبقى في اليمين */
+  justify-content: flex-end;
+}
+
+    /* عند البحث في الهواتف الصغيرة */
+    .game img {
+        height: 90%;
+        object-fit: cover;
+    }
+
+
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .icons a {
+            font-size: 40px;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .icons a:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.footer {
+    background-color: #140e0e;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px -5px 10px rgba(224, 62, 0, 0.5); /* إضافة ظل علوي */
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: white; /* لون النص أبيض */
+    font-size: 18px; /* حجم الخط */
+    font-weight: bold; /* جعل النص عريض */
+    text-decoration: none; /* إزالة الخط السفلي */
+    margin: 0 10px; /* تباعد بين الروابط */
+}
+
+.footer-links a:hover {
+    color: #e03e00; /* تغيير اللون عند التمرير */
+    text-decoration: underline; /* خط تحت النص عند التمرير */
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo" onclick="location.href=('https://hanyf1985.github.io/PS4GAMEARABIC/')">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHcMvRugU93ejZqWSH9mMLSk6TKk9D9X15XRiNk85OEgnxeI9ZWuAcpVbhTUrSoUWWCdf7xNd_XyIt8rPWGDEIyO7DTDENTmNwr7OK_yQqw695CXEbA34JdePj__sUqoYnGVTEXwYngFnkqyJ64davRoQ-6Ga7XqvrPa8vOhQdGmbXcUd_2eehNrd0q_k/s1600/PS4GAMEARABIC-2-22-2025%20%284%29.png" alt="PS4 Logo">
+    </div>
+    <h1 class="site-title">PS4GAMEARABIC</h1>
+    <div class="social-links">
+      <a href="https://web.facebook.com/share/v/1BRSsTQf57/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.youtube.com/@mustafahanyf" target="_blank" style="margin: 0 10px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="social-icon">
+      </a>
+      <a href="https://t.me/GOLDHEN198" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=k4jADXhS5U1t&format=png&color=000000" alt="Telegram" class="social-icon">
+      </a>
+    </div>
+  </div>
+  
+  
+<!-- الأقسام -->
+<div class="sections">
+  <div class="section-box" onclick="location.href=('قسم ألعاب PS4')">🎮 PS4 GAMES</div>
+  <div class="section-box" onclick="location.href=('قسم الثيمات')">🎨 THEMES</div>
+</div>
+<div class="slider">
+  <div class="slides" id="slider">
+    <div class="slide">
+      <img src="https://i.top4top.io/p_31952gb8k1.jpg" alt="لعبة 1">
+    </div>
+    <div class="slide">
+     <img src="https://b.top4top.io/p_3195k4jce2.jpg" alt="لعبة 2">  
+    </div>
+    <div class="slide">
+     <img src="https://a.top4top.io/p_3195q27l63.jpg" alt="لعبة 3">  
+    </div>
+    <div class="slide">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSUHALUoYaHzwWhELLoo3cBXPWgYsQtvallWF1F0zvvDSMiM9nD7SpPvDt-LfXmnc5sIai9p4rI29qGdSqULKkRkl5Mct2KpBthJMIh4IPfj1bmr6IXBzikRxUUcH_Vis9savOB3n-eLgFj-XkFRrOv7pveJjm7iYvM_Mx4NB7Toose3FpCkqYEteb8J8/s1600/36190303-thelastofus-part1-gameplay-blogroll-1661890776302.jpg" alt="لعبة 4">  
+     </div>
+    <div class="slide">
+     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqMMeeyV81LIivj3BJnKK4WJzyCeQ7WCODN97TikdpCgd-1_MknpggTucXrQR34ES2jErpyWxJGkZW3_v9GHye3fYEI52bkw3SktoB0sb5FRWoWycuyxszEo5lYeDduiCT7oL35Kw_oPuPaosZ9hpYpRFjD_JWctkbYV0IaFxx-oAbKJDo62GKx7p1QXo/s1600/the_last_of_us_by_vegetassj51_d4q5t57-fullview.jpg" alt="لعبة 4">  
+   </div>
+   <div class="slide">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2h4WdmS6P4pI0CMCqJbVfCwWecFX49ODKL0_aNHiWdEcOiCO-kVyT5mvDzVQFY72BkBoW6yEsULLekWRA1l0V8QcR99elCC_AhtNX5qJNkogEq4rpssTHa_GWNrNAu9DypogOPD4aLPuuL_KC1k7iqwSNAfRiEUThxBIKXDWx_Rg_zTo276M9NO90BAI/s1600/630f7356fc10cd2d02210c1f_THE-LAST-OF-US-PART-1-naughty-dog-3.jpg" alt="لعبة 4">  
+  </div>
+  <div class="slide">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpK5p5gGurlwtmCpbi8D5cyddesjGIkfYRgIBvwUwBosltltvQeYBVpmbOIM92GMnXUBlmuYXSv5BNCAWXY-cdWMZY-w54llUf8I0QFX0fs6Oq2HoYacScevkLIhd9m-MnLhf05g6NSg9XD24exElPCSPYMTUE2uj7ywTl12X2RMlLOjngJtcrTNKJdHQ/s1600/The-last-of-us-part-1-1.jpg" alt="لعبة 4">  
+  </div> 
+  <div class="slide">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxYy_hh0B5vDLOXpwivRkEk9BNkQjYtDLBr1PpmuW7nqRj2q0qNN99FPp9sD_GYivkXvBym9VB7-SVCbglcFyp2f3FUTAFHFYJvtLkHzWHuovJ8ICPGPTuFMXoFtLkCSJfUIpxJyLnf8cMyZVzhTu7ex3WME6c4TOrmLNPfruryqRTNvWhD63EtVOjVzc/s1600/ruliweb_los02.jpg" alt="لعبة 4">  
+  </div>
+</div>
+</div>
+  <!-- عنوان اللعبة -->
+  <div class="game-title">The Last of Us Remastered  </div>
+</div>
+  <!-- الجدول -->
+  <table>
+    <thead>
+      <tr>
+        <th>CUSA00556</th>
+        <td>كود اللعبة</td>
+      </tr>
+      <tr>
+        <th>القوائم/الحوارات</th>
+        <td>اللغة العربية</td>
+      </tr>
+      <tr>
+        <th>  أكشن،رعب،بقاء</th>
+        <td>النوع</td>
+      </tr>
+      <tr>
+        <th>2017</th>
+        <td>سنة النشر</td>
+      </tr>
+      <tr>
+        <th>44.58G</th>
+        <td>حجم اللعبة</td>
+      </tr>
+      <tr>
+        <th>948M</th>
+        <td>حجم التحديث</td>
+      </tr>
+      <tr>
+        <th>1.11  </th>
+        <td>رقم التحديث</td>
+      </tr>
+      <tr>
+        <th>Playable5.05,6.xx,7.xx,9.00</th>
+        <td>النسخ القابلة للتشغيل</td>
+      </tr>
+      <tr>
+        <th>18+</th>
+        <td>18+ التصنيف العمري</td>
+      </tr>
+    </thead>
+  </table>
+  التعريب مدمج مع اللعبة
+<!-- زر الانتقال إلى الفيديو -->
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/partlast1.html" target="_blank">تحميل اللعبة بارتات 1</a>
+</div>
+✅🔑FREE WAR GAMER : الــــبــــاســورد🔑✅
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/part2last1.html" target="_blank">تحميل اللعبة بارتات 2</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/part3last1.html" target="_blank">تحميل اللعبة بارتات 3</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/part4last1.html" target="_blank">تحميل اللعبة بارتات 4</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/part5last1.html" target="_blank">تحميل اللعبة بارتات 5</a>
+</div>
+✅🔑hako : الــــبــــاســورد🔑✅
+</div>
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/part6last1.html" target="_blank">تحميل اللعبة بارتات 6</a>
+</div>
+✅🔑www.downloadha.com : الــــبــــاســورد🔑✅
+<div class="centered-content">
+  <a class="zr-download pkg-download" href="pkg/pkglast1.html" target="_blank">  1 PKG تحميل اللعبة</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download pkg-download" href="pkg/pkg1last1.html" target="_blank">  2 PKG تحميل اللعبة</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download arabic-patch" href="patch/patch1last1.html" target="_blank">تحميل التعريب 1.11</a>
+</div>
+<div class="centered-content">
+    <a class="zr-download arabic-patch" href="patch/patch2last1.html" target="_blank">تحميل التعريب 1.11</a>
+  </div>
+<div class="centered-content">
+  <a class="zr-download DLC-download" href="https://akirabox.com/l76mZ7qp3anY/file#4gamer" target="_blank">تحميل DLC</a>
+</div>
+</div>
+    <!--سهم التحميل-->
+    <div class="download-arrow">
+        <div class="arrow"></div>
+        <p>إضغط هنا لمشاهدة</p>
+    </div>
+   <!--زر الانتقال إلى الفيديو-->
+   <button class="scroll-button" onclick="scrollToVideo()">🎥 فيديو تركيب التعريب</button>
+   <div class="description-container">
+        <div class="description">
+            <h2>🧟‍♂️🔥 **The Last of Us – عندما يصبح البقاء هو المعركة الأخيرة!** 🔥🧟‍♂️</h2>
+    
+            <p>
+                في عالمٍ تحول إلى **كابوس حيّ**، حيث لم يعد البشر هم الخطر الوحيد، تأخذنا **Naughty Dog** في واحدة من أعمق وأقوى القصص في تاريخ الألعاب!  
+                **The Last of Us** ليست مجرد لعبة… إنها **ملحمة إنسانية** تمزج بين الألم، الحب، والخسارة، في عالم يسوده الدمار! 🎭💔  
+            </p>
+    
+            <h3>☣️ **قصة عن البقاء… وعن فقدان الإنسانية!** 🏚️</h3>
+            <p>
+                بعد مرور **20 عامًا على انتشار فيروس قاتل** حوّل البشر إلى **وحوش طائشة**، يعيش **جويل**—رجل محطم فقد كل شيء—حياة قاسية وسط عالم لا يرحم!  
+                لكن عندما يُكلف بمهمة **تهريب فتاة مراهقة تُدعى "إيلي"** عبر الولايات المتحدة المدمرة، تتغير حياته للأبد…  
+            </p>
+    
+            <p>
+                ما يبدأ كصفقة بسيطة، يتحول إلى **رحلة ملحمية** تكشف عن عمق العلاقة بين **رجل محطم وفتاة ولدت في عالم ميؤوس منه**!  
+            </p>
+    
+            <h3>🌎 **عالم ما بعد الكارثة… حيث كل خطوة قد تكون الأخيرة!** 🏚️</h3>
+            <p>
+                ستتنقل بين **مدن مهجورة مغطاة بالطبيعة**، ومناطق خاضعة لسيطرة العصابات والناجين، حيث لا يمكن الوثوق بأحد!  
+                كل زاوية في هذا العالم تخبرك **قصة عن الذين عاشوا… والذين لم ينجوا!** 🕵️‍♂️💀  
+            </p>
+    
+            <h3>⚔️ **أسلوب لعب مليء بالتوتر والإثارة!** 🔫</h3>
+            <ul>
+                <li>🔪 **نظام قتال وحشي** – استعمل الأسلحة النارية، السكاكين، أو حتى يديك للنجاة في عالم لا يرحم! 💀</li>
+                <li>🎯 **ذكاء اصطناعي متطور** – الأعداء يتكيفون مع أسلوبك، ويتواصلون ويطاردونك بذكاء مخيف! 🧠⚠️</li>
+                <li>🧟‍♂️ **أنواع متعددة من المصابين** – من الـ **Runners** السريعين إلى الـ **Clickers** العميان الذين ينقضّون عليك عند أول صوت! 😱</li>
+                <li>💡 **نظام صناعة متطور** – اصنع أسلحة، قنابل مولوتوف، وأدوات علاج باستخدام الموارد القليلة المتاحة! 🛠️</li>
+                <li>🔦 **استخدام البيئة** – استخدم الظلال، الأصوات، والاختباء لتجنب المواجهات أو نصب الكمائن للأعداء! 🕶️</li>
+            </ul>
+    
+            <h3>🎭 **علاقة جويل وإيلي… القلب النابض للقصة!** ❤️</h3>
+            <p>
+                هل يمكن أن تجد **الأبوة والحنان** وسط عالم قاسٍ؟  
+                العلاقة بين **جويل وإيلي** تتطور من شراكة غير مرغوبة إلى **رابطة عائلية حقيقية**، تتحدى فيها العواطف قانون البقاء للأقوى! 💔  
+            </p>
+    
+            <h3>🎼 **موسيقى غاستافو سانتولالا – لحن الألم والأمل!** 🎻</h3>
+            <p>
+                النغمات الحزينة لعازف الجيتار **غاستافو سانتولالا** تعكس **العزلة، الخوف، والدفء في آنٍ واحد**!  
+                كل نغمة تحمل إحساسًا **يجعلك تعيش الألم والمعاناة وكأنها قصتك أنت!** 🎶😢  
+            </p>
+    
+            <h3>⚠️ **مخاطر لا تنتهي… من البشر والمخلوقات على حد سواء!** ☠️</h3>
+            <p>
+                العالم ليس مليئًا بالمصابين فقط… **الناجون قد يكونون أكثر خطورة!**  
+                ستواجه عصابات قاتلة، جماعات متوحشة مثل الـ **صيادين (Hunters)**، ومرتزقة لا يرحمون!  
+                البعض يقاتل من أجل الغذاء، والبعض الآخر يقاتل فقط من أجل المتعة… 🔪⚔️  
+            </p>
+    
+            <h3>🏆 **جوائز وتقديرات عالمية!** 🌟</h3>
+            <p>
+                - 🏅 **لعبة العام 2013** – حصدت عشرات الجوائز كأفضل لعبة! 🏆  
+                - ⭐ **إشادة نقدية واسعة** – تعتبر واحدة من أعظم الألعاب في التاريخ! 🎮  
+                - 🎬 **تم تحويلها إلى مسلسل تلفزيوني ناجح** من إنتاج HBO! 📺  
+            </p>
+    
+            <h3>💀 **هل يمكنك البقاء في عالم لم يعد للبشرية فيه مكان؟** ⏳</h3>
+            <p>
+                في **The Last of Us**، الاختيار ليس بين الخير والشر… بل بين **الحياة والموت**!  
+                هل ستظل متمسكًا بإنسانيتك؟ أم ستصبح مجرد **وحش آخر يحارب من أجل البقاء؟**  
+            </p>
+    
+            <h2>🎮 **جهز نفسك لواحدة من أعظم التجارب في تاريخ الألعاب… The Last of Us!** 🎮</h2>
+        </div>
+    </div>
+    
+  <!-- مراجعات المستخدمين -->
+  <div class="user-reviews">
+    <h2>مراجعات المستخدمين:</h2>
+    <p>⭐⭐⭐⭐⭐ - "لعبة مذهلة، لا تفوتها!"</p>
+    <p>⭐️⭐️⭐️⭐️ - "الرسوميات مذهلة، لكن القصة كانت أضعف قليلاً."</p>
+    <p>⭐⭐⭐⭐⭐ - "أفضل لعبة لعبتها على الإطلاق!"</p>
+  </div>
+
+  <div class="video-container" id="video">
+    <iframe 
+        src="https://www.youtube.com/embed/" 
+        title="فيديو ترويجي - the last of us 2"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+  </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://web.facebook.com/share/v/1BRSsTQf57/" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" alt="Facebook" width="40">
+      
+          <a href="https://www.youtube.com/@mustafahanyf" target="_blank" style="margin: 0 10px;">
+            <img src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000" alt="YouTube" width="40">
+     
+          <a href="https://t.me/GOLDHEN198" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=oWiuH0jFiU0R&format=png&color=000000" alt="Telegram" width="40">
+    
+    
+    <footer class="footer">
+      <div class="footer-links">
+          <a href="terms.html">اتفاقية الاستخدام</a>
+          <a href="privacy.html">سياسة الخصوصية</a>
+      </div>
+    </footer>
+    <footer class="footer">
+      <div className="text-sm">Copyright &copy; 2025 | by Hanyf Mustafa</div>
+  <script>
+        function scrollToVideo() {
+            let videoSection = document.getElementById("video");
+            videoSection.scrollIntoView({ behavior: "smooth" }); // التمرير بسلاسة إلى الفيديو
+        }
+   function showVideo() {
+            let videoContainer = document.getElementById("videoContainer");
+            let video = document.getElementById("video");
+            
+            videoContainer.style.display = "block"; // إظهار الفيديو
+            video.scrollIntoView({ behavior: "smooth" }); // التمرير إليه بسلاسة
+            video.play(); // تشغيل الفيديو تلقائيًا
+        }
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+
+    function moveSlide(step) {
+      currentIndex += step;
+      if (currentIndex >= totalSlides) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = totalSlides - 1;
+      document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(() => moveSlide(1), 3000); // تشغيل تلقائي
+    document.addEventListener("DOMContentLoaded", function() {
+            console.log("Page Loaded");
+        });
+  </script>
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS4GAMEARABIC</title>
+  <style>
+    body {  
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      background-color: #140e0e;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* تصميم الهيدر */
+    .header {
+      background: #0e1329;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo img {
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    .site-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* تصميم الأقسام */
+    .sections {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .section-box {
+      background: #2c2c2c;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 69, 0, 0.5);
+      transition: background 0.3s;
+    }
+
+    .section-box:hover {
+      background: #ff4500;
+    }
+
+    /* تصميم السلايدر */
+    .slider {
+      width: 90%;
+      max-width: 1000px;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px 2px #ff4500;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: auto;
+      box-sizing: border-box;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      border: none;
+      font-size: 20px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* تصميم الجدول */
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 800px;
+      background: #2c2c2c;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #444;
+    }
+
+    th {
+      background-color: #ff4500;
+      color: white;
+    }
+
+    td {
+      background-color: #3a3a3a;
+      color: white;
+    }
+
+    td:hover {
+      background-color: #555;
+    }
+
+    /* تصميم العنوان */
+    .game-title {
+      font-size: 33px;
+      font-weight: bold;
+      color: #ff4500;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    @media (max-width: 768px) {
+      .slider {
+        height: 250px;
+      }
+      table {
+        width: 100%;
+      }
+    }
+
+    .download-buttons-container {
+      margin: 20px;
+      text-align: center;
+    }
+    .centered-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+      margin: 10px 0;
+    }
+
+    .zr-download {
+      font-size: 14px; /* تقليص الحجم */
+      padding: 8px 15px;
+      margin: 5px 0;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .zr-download:hover {
+      transform: scale(1.05);
+    }
+
+    /* ألوان خاصة لكل رابط تحميل */
+    .game-part {
+      background-color: #233243; /* أزرق */
+      color: white;
+    }
+    .game-part:hover {
+      background-color: #0056b3;
+    }
+
+    .pkg-download {
+      background-color: #233243; /* أخضر */
+      color: white;
+    }
+    .pkg-download:hover {
+      background-color: #218838;
+    }
+
+    .arabic-patch {
+      background-color: #233243; /* أصفر */
+      color: white;
+    }
+    .arabic-patch:hover {
+      background-color: #e0a800;
+    }
+    .DLC-download {
+      background-color: #233243; /* أصفر */
+      color: white;
+    }
+    .DLC-download:hover {
+      background-color: #250d46;
+    }
+    .modpass-download {
+      background-color: #041028; /* أصفر */
+      color: white;
+    }
+    .modpass-download:hover {
+      background-color: #031944;
+    }
+    /* زر الانتقال إلى الفيديو */
+    .scroll-to-video {
+      font-size: 14px; /* تقليص الحجم */
+      background-color: #ff4500;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .scroll-to-video:hover {
+      background-color: #0e1329;
+      transform: scale(1.05);
+    }
+
+    /* وصف اللعبة */
+    .description-container {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #140e0e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 2px #ff4500;
+      text-align: justify;
+      direction: rtl; /* جعل النص من اليمين إلى اليسار */
+    }
+    .description p {
+      margin: 15px 0;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* مراجعات المستخدمين */
+    .user-reviews {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #140e0e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 2px #ff4500;
+      text-align: center; /* جعل المراجعات في الوسط */
+    }
+    .user-reviews h2 {
+      font-size: 20px;
+      color: #ff4500;
+      margin-bottom: 15px;
+    }
+    .user-reviews p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+
+        .video-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 80%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+        .scroll-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .scroll-button:hover {
+            background-color: #0056b3;
+        }
+  /* حركة السهم */
+  @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px); /* ارتفاع السهم */
+        }
+        60% {
+            transform: translateY(-5px); /* ارتفاع أقل للسهم */
+        }
+    }
+
+    /* نص التوجيه */
+    .download-arrow p {
+        font-size: 25px;
+        margin-top: 5px; /* مسافة بين السهم والنص */
+        color: #fc0606; /* لون النص */
+    }
+
+   /* زر الانتقال إلى الفيديو */
+.scroll-to-video {
+    display: inline-block;
+    background-color: #ff4500; /* لون الزر */
+    color: white;
+    padding: 10px 20px; /* حجم الزر */
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* مسافة بين الزر والمحتوى */
+    transition: background-color 0.3s ease;
+    cursor: default; /* إزالة ظهور المؤشر */
+}
+
+.scroll-to-video:hover {
+    background-color: #0e1329; /* لون الزر عند التمرير */
+    cursor: default; /* التأكد من عدم تغيير المؤشر عند التمرير */
+}
+
+    /* سهم التحميل */
+    .download-arrow {
+        position: relative;
+        text-align: center;
+        margin-top: 10px; /* مسافة بين الفيديو والسهم */
+    }
+
+    .arrow {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid #ff0000; /* لون السهم */
+        margin: 0 auto; /* مركز السهم */
+        animation: bounce 1s infinite; /* الحركة */
+    }
+       
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-bar input {
+                width: 80%;
+            }
+
+            .slider {
+                height: auto;
+            }
+
+            .game img {
+                height: 130px;
+            }
+
+            .section-box {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+        .logo img {
+    height: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* تكبير اللوجو عند التمرير */
+    opacity: 0.8; /* تقليل الشفافية قليلاً */
+}
+/* تصميم الأيقونات الاجتماعية */
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+
+.logo {
+ 
+  flex: 0; /* يضمن أن الشعار يكون على اليسار */
+  justify-content: flex-end;
+}
+
+
+.site-title {
+  flex: 2; /* يضمن أن العنوان يبقى في المنتصف */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1; /* يضمن أن الأيقونات تبقى في اليمين */
+  justify-content: flex-end;
+}
+
+    /* عند البحث في الهواتف الصغيرة */
+    .game img {
+        height: 90%;
+        object-fit: cover;
+    }
+
+
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .icons a {
+            font-size: 40px;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .icons a:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.footer {
+    background-color: #140e0e;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px -5px 10px rgba(224, 62, 0, 0.5); /* إضافة ظل علوي */
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: white; /* لون النص أبيض */
+    font-size: 18px; /* حجم الخط */
+    font-weight: bold; /* جعل النص عريض */
+    text-decoration: none; /* إزالة الخط السفلي */
+    margin: 0 10px; /* تباعد بين الروابط */
+}
+
+.footer-links a:hover {
+    color: #e03e00; /* تغيير اللون عند التمرير */
+    text-decoration: underline; /* خط تحت النص عند التمرير */
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo" onclick="location.href=('https://hanyf1985.github.io/PS4GAMEARABIC/')">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHcMvRugU93ejZqWSH9mMLSk6TKk9D9X15XRiNk85OEgnxeI9ZWuAcpVbhTUrSoUWWCdf7xNd_XyIt8rPWGDEIyO7DTDENTmNwr7OK_yQqw695CXEbA34JdePj__sUqoYnGVTEXwYngFnkqyJ64davRoQ-6Ga7XqvrPa8vOhQdGmbXcUd_2eehNrd0q_k/s1600/PS4GAMEARABIC-2-22-2025%20%284%29.png" alt="PS4 Logo">
+    </div>
+    <h1 class="site-title">PS4GAMEARABIC</h1>
+    <div class="social-links">
+      <a href="https://web.facebook.com/share/v/1BRSsTQf57/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.youtube.com/@mustafahanyf" target="_blank" style="margin: 0 10px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="social-icon">
+      </a>
+      <a href="https://t.me/GOLDHEN198" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=k4jADXhS5U1t&format=png&color=000000" alt="Telegram" class="social-icon">
+      </a>
+    </div>
+  </div>
+  
+  
+<!-- الأقسام -->
+<div class="sections">
+  <div class="section-box" onclick="location.href=('قسم ألعاب PS4')">🎮 PS4 GAMES</div>
+  <div class="section-box" onclick="location.href=('قسم الثيمات')">🎨 THEMES</div>
+</div>
+<div class="slider">
+  <div class="slides" id="slider">
+    <div class="slide">
+      <img src="https://cdn2.unrealengine.com/egs-marvelsspidermanremastered-insomniacgamesnixxessoftware-g1a-10-1920x1080-015932125397.jpg" alt="لعبة 2">  
+     </div>
+    <div class="slide">
+     <img src="https://www.pluggedin.com/wp-content/uploads/2020/01/Marvel_s_Spider-Man__Large.jpg" alt="لعبة 2">  
+    </div>
+    <div class="slide">
+      <img src="https://www.cnet.com/a/img/resize/2fcf627314b3a4b41fa72aef084ceb51325e18a0/hub/2018/09/03/22f1cfc7-19df-418a-9a34-b83a960efefc/marvels-spider-man-20180826002235.jpg?auto=webp&width=768" alt="لعبة 4">
+    </div>
+    <div class="slide">
+     <img src="https://cdn.mos.cms.futurecdn.net/MVtk9tuFQg3P9ji8cBbrN.jpg" alt="لعبة 5">  
+    </div>
+    <div class="slide">
+     <img src="https://zoneplay.ma/wp-content/uploads/2021/07/SPMPS4_Screen_PS4_WebbedMask_E32017_1497330191-scaled-1.jpg" alt="لعبة 6">  
+    </div> <div class="slide">
+      <img src="https://wizarddojo.com/wp-content/uploads/2018/06/marvels-spider-man-screen-16-ps4-us-30mar18.jpeg" alt="لعبة 7">
+    </div>
+    <div class="slide">
+     <img src="https://i0.wp.com/tahagame.com/wp-content/uploads/2024/01/marvels-spider-man-ps4-gameplay-launch-trailer_35dw.1200.webp?fit=1200%2C675&ssl=1" alt="لعبة 2">  
+    </div>
+  </div>
+</div>
+  <!-- عنوان اللعبة -->
+  <div class="game-title">Marvels Spider Man </div>
+</div>
+  <!-- الجدول -->
+  <table>
+    <thead>
+      <tr>
+        <th>CUSA11995</th>
+        <td>كود اللعبة</td>
+      </tr>
+      <tr>
+        <th>مدبــلجة باللهجة المصرية </th>
+        <td>اللغة العربية</td>
+      </tr>
+      <tr>
+        <th> أكشن، مغامرات</th>
+        <td>النوع</td>
+      </tr>
+      <tr>
+        <th>2018</th>
+        <td>سنة النشر</td>
+      </tr>
+      <tr>
+        <th>44 GB</th>
+        <td>حجم اللعبة</td>
+      </tr>
+      <tr>
+        <th>19GB</th>
+        <td>حجم التحديث</td>
+      </tr>
+      <tr>
+        <th>1.17 </th>
+        <td>رقم التحديث</td>
+      </tr>
+      <tr>
+        <th>Playable5.05,6.xx,7.xx,9.00</th>
+        <td>النسخ القابلة للتشغيل</td>
+      </tr>
+      <tr>
+        <th>18+</th>
+        <td>18+ التصنيف العمري</td>
+      </tr>
+    </thead>
+  </table>
+<!-- زر الانتقال إلى الفيديو -->
+<div class="centered-content">
+  <a class="zr-download game-part" href="parts/partspider1.html" target="_blank"> 1 تحميل اللعبة بارتات </a>
+</div>
+<div class="centered-content">
+  <a class="zr-download arabic-patch" href="patch/patchspider1.html" target="_blank">تحميل التعريب 1.17</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download DLC-download" href="dlc/dlcspider1.html" target="_blank">تحميل DLC</a>
+</div>
+✅🔑 PLAY3ARABY : الــــبــــاســورد🔑✅
+<div class="centered-content">
+  <a class="zr-download pkg-download" href="pkg/pkgspidersman.html" target="_blank">  PKG تحميل اللعبة</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download arabic-patch" href="patch/patch2spider1.html" target="_blank">تحميل التعريب 1.17</a>
+</div>
+<div class="centered-content">
+  <a class="zr-download DLC-download" href="dlc/dlc2spider1.html" target="_blank">تحميل DLC</a>
+</div>
+✅🔑...............................................................................🔑✅
+  </div>
+  <div class="centered-content">
+    <a class="zr-download game-part" href="parts/part2spider1.html" target="_blank"> 2 تحميل اللعبة بارتات </a>
+  </div>
+  <div class="centered-content">
+    <a class="zr-download arabic-patch" href="patch/patch3spider1.html" target="_blank">تحميل التعريب 1.17</a>
+  </div>
+<div class="centered-content">
+  <a class="zr-download DLC-download" href="dlc/dlc3spider1.html" target="_blank">تحميل DLC</a>
+</div>
+</div>
+✅🔑 www.downloadha.com : الــــبــــاســورد🔑✅
+    <!--سهم التحميل-->
+    <div class="download-arrow">
+        <div class="arrow"></div>
+        <p>إضغط هنا لمشاهدة</p>
+    </div>
+   <!--زر الانتقال إلى الفيديو-->
+   <button class="scroll-button" onclick="scrollToVideo()">🎥 فيديو تركيب التعريب</button>
+</div>
+<div class="description-container">
+    <div class="description">
+        <h2>🕷️ **Marvel’s Spider-Man – عندما يتحول البطل إلى أسطورة!** 🏙️⚡</h2>
+
+        <p>
+            استعد لارتداء القناع والانطلاق بين ناطحات السحاب في **مدينة نيويورك النابضة بالحياة** في واحدة من **أروع ألعاب الأبطال الخارقين على الإطلاق!**  
+            طوّرت *Insomniac Games* هذه التحفة الفنية بالتعاون مع *Marvel*, لتجلب لك **تجربة سبايدرمان الأكثر واقعية وإثارة على الإطلاق!** 🎮🔥  
+        </p>
+
+        <h3>🌆 **مدينة نيويورك… ملعبك الشخصي!** 🏙️🕸️</h3>
+        <p>
+            تم تصميم **مدينة نيويورك** بتفاصيل مذهلة، حيث يمكنك **التأرجح عبر شوارعها المزدحمة**، تسلق ناطحات السحاب، والتفاعل مع الناس!  
+            **كل زاوية من المدينة تنبض بالحياة**، سواء كنت تلاحق الأشرار أو تستمتع بمشاهدة الغروب من فوق برج أفنجرز! 🌇✨  
+        </p>
+
+        <h3>⚔️ **قتال سريع وحركات بهلوانية لا تصدق!** 🕷️🥊</h3>
+        <ul>
+            <li>⚡ **نظام قتال مرن وسلس** – تحركات سريعة، ضربات متتالية، واستخدام الشبكة بطريقة إبداعية! 🎯</li>
+            <li>🕸️ **تنوع في الأساليب** – استخدم التخفي، الضربات الجوية، أو نصب الفخاخ للأعداء! 🎭</li>
+            <li>🤯 **قدرات وأدوات سبايدرمان** – استعمل شبكة العنكبوت بطرق مختلفة، مثل تعطيل الأسلحة أو سحب الأعداء من ارتفاعات شاهقة! 🛠️</li>
+        </ul>
+
+        <h3>🦹‍♂️ **أشرار أقوى… وخطر أعظم!** 💥</h3>
+        <p>
+            ليست مجرد قصة سبايدرمان المعتادة! ستواجه بعضًا من **أخطر الأشرار** في عالم مارفل، مثل:  
+        </p>
+        <ul>
+            <li>⚡ **ميستر نيجتيف (Mister Negative)** – قائد عصابة الـ *Inner Demons* بقوى غامضة خطيرة! ☯️</li>
+            <li>🔩 **دكتور أوكتوبوس (Doctor Octopus)** – العبقري المجنون وأحد أخطر أعداء سبايدرمان! 🧠</li>
+            <li>💚 **العقرب (Scorpion)** – قاتل سام بقدرات خارقة! 🦂</li>
+            <li>🏋️‍♂️ **راينو (Rhino)** – قوة تدميرية هائلة لا يمكن إيقافها! 🦏</li>
+            <li>🦅 **فالتشر (Vulture)** – محارب جوي سريع وقاتل! 🦅</li>
+        </ul>
+        <p>مع تصاعد التهديدات، ستجد نفسك في **حرب مفتوحة ضد الشر** لا تعرف الرحمة! 🚨🔥</p>
+
+        <h3>🕶️ **قصة عميقة تربط بيتر باركر بالبطل الخارق!** 🎭</h3>
+        <p>
+            ليست مجرد قصة بطل يقاتل الأشرار، بل هي **قصة إنسانية تمزج بين الحياة العادية والمسؤولية العظمى!**  
+            *بيتر باركر* في هذه اللعبة ليس مراهقًا مبتدئًا، بل **بطل متمرس يبلغ من العمر 23 عامًا**، يحاول التوفيق بين عمله، حياته الشخصية، وعلاقاته العاطفية… وكل ذلك بينما يحمي المدينة من الفوضى! 💔💡  
+        </p>
+
+        <h3>🎭 **عالم مارفل في أبهى صوره!** 🌍✨</h3>
+        <p>
+            لا تقتصر التجربة على سبايدرمان فقط، بل ستحظى بفرصة اللعب بشخصيات أخرى مثل **ماري جين**!  
+            كما أن هناك **تلميحات وشخصيات من عالم مارفل الأوسع**، مثل برج *Avengers*، شركة *Oscorp*، وظهور شخصيات مثل **مايلز موراليس**! 🏢🔥  
+        </p>
+
+        <h3>🎮 **تجربة مذهلة… مستوحاة من الكوميكس والأفلام!** 🎬</h3>
+        <ul>
+            <li>🌟 **نظام تطوير الشخصية** – طور مهارات سبايدرمان وافتح **بدلات أسطورية** مثل بدلة *Iron Spider*! 🦾🕷️</li>
+            <li>🛠️ **أسلحة وأدوات متنوعة** – استعمل **شبكات متفجرة، دروع حماية، وأجهزة تصعق الأعداء!** ⚡</li>
+            <li>📖 **قصة سينمائية رائعة** – مشاهد سينمائية بجودة أفلام هوليوود، مع حبكة مليئة بالمفاجآت! 🎥</li>
+            <li>🎼 **موسيقى ملحمية** – ألحان درامية تجعلك تشعر وكأنك داخل فيلم مارفل حقيقي! 🎶</li>
+        </ul>
+
+        <h3>🏆 **جوائز وتقديرات عالمية!** 🏅</h3>
+        <p>
+            - 🏆 **لعبة العام من PlayStation** – واحدة من أفضل ألعاب PS4! 🎮  
+            - ⭐ **إشادة نقدية واسعة** – حصلت على تقييمات مذهلة من النقاد واللاعبين! 🌟  
+            - 💰 **أسرع ألعاب سبايدرمان مبيعًا في التاريخ**! 🚀  
+        </p>
+
+        <h3>🌍 **هل أنت مستعد لتصبح البطل الذي تحتاجه نيويورك؟** 🕷️</h3>
+        <p>
+            **"مع القوة العظمى، تأتي مسؤولية عظيمة"**… ولكن في *Marvel’s Spider-Man*، القوة العظمى تعني **حرية كاملة** للقفز، الطيران، والقتال كما لم تفعل من قبل!  
+        </p>
+
+        <h2>🎮 **اربط حزامك… وانطلق في مغامرة سبايدرمان الأعظم حتى الآن!** 🏙️🕸️</h2>
+    </div>
+</div>
+
+
+
+  <!-- مراجعات المستخدمين -->
+  <div class="user-reviews">
+    <h2>مراجعات المستخدمين:</h2>
+    <p>⭐⭐⭐⭐⭐ - "لعبة مذهلة، لا تفوتها!"</p>
+    <p>⭐️⭐️⭐️⭐️ - "الرسوميات مذهلة، لكن القصة كانت أضعف قليلاً."</p>
+    <p>⭐⭐⭐⭐⭐ - "أفضل لعبة لعبتها على الإطلاق!"</p>
+  </div>
+  إتبع نفس الخطوات
+  <div class="video-container" id="video">
+    <iframe 
+        src="https://www.youtube.com/embed/Gk2G9AuAFnk" 
+        title="فيديو ترويجي - Marvels Spider Man"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+  </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://web.facebook.com/share/v/1BRSsTQf57/" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" alt="Facebook" width="40">
+      
+          <a href="https://www.youtube.com/@mustafahanyf" target="_blank" style="margin: 0 10px;">
+            <img src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000" alt="YouTube" width="40">
+     
+          <a href="https://t.me/GOLDHEN198" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=oWiuH0jFiU0R&format=png&color=000000" alt="Telegram" width="40">
+     
+    
+    
+    <footer class="footer">
+      <div class="footer-links">
+          <a href="terms.html">اتفاقية الاستخدام</a>
+          <a href="privacy.html">سياسة الخصوصية</a>
+      </div>
+    </footer>
+    <footer class="footer">
+      <div className="text-sm">Copyright &copy; 2025 | by Hanyf Mustafa</div>
+  <script>
+    function scrollToVideo() {
+            let videoSection = document.getElementById("video");
+            videoSection.scrollIntoView({ behavior: "smooth" }); // التمرير بسلاسة إلى الفيديو
+        }
+   function showVideo() {
+            let videoContainer = document.getElementById("videoContainer");
+            let video = document.getElementById("video");
+            
+            videoContainer.style.display = "block"; // إظهار الفيديو
+            video.scrollIntoView({ behavior: "smooth" }); // التمرير إليه بسلاسة
+            video.play(); // تشغيل الفيديو تلقائيًا
+        }
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+
+    function moveSlide(step) {
+      currentIndex += step;
+      if (currentIndex >= totalSlides) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = totalSlides - 1;
+      document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    setInterval(() => moveSlide(1), 3000); // تشغيل تلقائي
+    document.addEventListener("DOMContentLoaded", function() {
+            console.log("Page Loaded");
+        });
+     
+  </script>
+</body>
+</html>
