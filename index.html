@@ -401,7 +401,7 @@
     }
 
     .game img {
-        width: 100%; /* جعل الصورة تمتد بالكامل داخل العنصر */
+        width: 60%; /* جعل الصورة تمتد بالكامل داخل العنصر */
         height: 160px; /* تصغير الارتفاع قليلاً للشاشات الأصغر */
     }
 }
@@ -415,7 +415,7 @@
 
     /* عند البحث، تأكد من عرض الصورة بنسبة 90% من الارتفاع */
     .game img {
-        height: 90%; /* اجعل الصورة 90% من الارتفاع */
+        height: 60%; /* اجعل الصورة 90% من الارتفاع */
         object-fit: cover; /* الحفاظ على التناسب بدون تشويه */
     }
 
@@ -427,6 +427,41 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+}
+
+/* تصميم شبكة الألعاب للهاتف فقط */
+@media (max-width: 768px) {
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* لعبتين في كل صف */
+        gap: 10px; /* مسافة بين الألعاب */
+        justify-content: center; /* توسيط الألعاب في المنتصف */
+        width: fit-content; /* يجعل عرض الشبكة يعتمد على محتواها */
+        margin: 0 auto; /* توسيط الشبكة بالكامل */
+    }
+
+    .game {
+        text-align: center;
+    }
+
+    .game img {
+        width: 100%;
+        height: 160px; /* ارتفاع مناسب للهواتف */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+/* للهواتف الصغيرة جدًا (أقل من 480px) */
+@media (max-width: 480px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 140px); /* تصغير حجم الألعاب */
+        gap: 8px;
+    }
+
+    .game img {
+        height: 140px;
     }
 }
 
