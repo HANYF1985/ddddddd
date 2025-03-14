@@ -519,6 +519,39 @@
     text-decoration: underline; /* خط تحت النص عند التمرير */
 }
 
+@media (max-width: 768px) {
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 461px); /* لعبتين في كل صف، كل لعبة بعرض 461px */
+        gap: 10px; /* مسافة بين الألعاب */
+        justify-content: center; /* توسيط الألعاب داخل الشبكة */
+        width: fit-content; /* يجعل الشبكة تأخذ حجم محتواها */
+        margin: 0 auto; /* توسيط الشبكة في الصفحة */
+    }
+
+    .game {
+        text-align: center;
+    }
+
+    .game img {
+        width: 100%;
+        height: 250px; /* ارتفاع مناسب */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+/* للهواتف الأصغر من 480px */
+@media (max-width: 480px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 230px); /* تصغير العرض ليناسب الشاشات الصغيرة جدًا */
+        gap: 8px;
+    }
+
+    .game img {
+        height: 200px;
+    }
+}
 
     </style>
 </head>
