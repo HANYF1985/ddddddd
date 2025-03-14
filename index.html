@@ -371,68 +371,41 @@
         padding: 8px 15px;
     }
 }
-
 /* تحسين العرض للهواتف الصغيرة */
 @media (max-width: 768px) {
-    .search-bar input {
-        width: 70%;
-    }
-
-    .slider {
-        height: 40vh;
-    }
-
-    .game img {
-        height: 150px;
-    }
-
-    .section-box {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .game-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* عرض لعبتين في كل صف */
         gap: 10px; /* إضافة مسافة بين الألعاب */
     }
+
+    .game {
+        width: 100%; /* جعل اللعبة تأخذ كل عرض الخلية */
+        text-align: center; /* توسيط المحتوى داخل اللعبة */
+    }
+
+    .game img {
+        width: 100%; /* ضبط عرض الصورة بحيث تملأ العنصر */
+        height: 180px; /* تحديد ارتفاع مناسب */
+        object-fit: cover; /* منع تشوه الصورة */
+        border-radius: 10px; /* إضافة زوايا ناعمة */
+    }
 }
 
 /* تصميم الهواتف الصغيرة جداً */
 @media (max-width: 480px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .search-bar input {
-        width: 80%;
-    }
-
-    .slider {
-        height: 35vh;
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* تأكيد عرض لعبتين في كل صف */
+        gap: 8px; /* تقليل المسافة بين الألعاب */
     }
 
     .game img {
-        height: 130px;
-    }
-
-    .section-box {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .game-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* التأكيد على عرض لعبتين في كل صف */
-        gap: 8px; /* تقليل المسافة قليلاً بين الألعاب */
+        width: 100%; /* جعل الصورة تمتد بالكامل داخل العنصر */
+        height: 160px; /* تصغير الارتفاع قليلاً للشاشات الأصغر */
     }
 }
+
 
 /* لتناسب البحث مع الهواتف */
 @media (max-width: 768px) {
