@@ -396,11 +396,12 @@
 @media (max-width: 480px) {
     .game-grid {
         display: grid;
-        grid-template-columns: repeat(1, 1fr); /* تأكيد عرض لعبتين في كل صف */
+        grid-template-columns: repeat(2, 1fr); /* تأكيد عرض لعبتين في كل صف */
         gap: 4px; /* تقليل المسافة بين الألعاب */
+        --pcrgap: 20px
     }
     .game {
-        width: 70%; /* جعل اللعبة تأخذ كل عرض الخلية */
+        width: 100%; /* جعل اللعبة تأخذ كل عرض الخلية */
         text-align: center; /* توسيط المحتوى داخل اللعبة */
     }
     .game img {
@@ -439,7 +440,7 @@
 /* لزيادة التفاعل مع البحث في الهواتف */
 @media (max-width: 480px) {
     .search-bar input {
-        width: 90%;  /* تكبير الحقل ليغطي العرض */
+        width: 100%;  /* تكبير الحقل ليغطي العرض */
         font-size: 16px; /* تكبير حجم النص داخل الحقل */
     }
 
