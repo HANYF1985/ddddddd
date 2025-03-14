@@ -1,0 +1,3 @@
+/public/icons/facebook.svg
+/public/icons/youtube.svg
+/public/icons/telegram.svg
