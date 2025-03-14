@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncharted 4 A Thiefs End  game</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: url('https://i0.wp.com/www.vga4a.com/wp-content/uploads/Uncharted-Reboot.jpg?resize=780%2C470&ssl=1');
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .header .logo {
+            height: 40px;
+           
+        }
+
+
+        .header .site-name {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .info-bar {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .info-bar2 {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .window {
+            position: relative;
+            min-height: calc(100vh - 100px);
+            width: 100%;
+            box-sizing: border-box;
+            padding: 90px 20px 100px;
+        }
+
+        table {
+            margin: 60px auto;
+            height: 5%;
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        th {
+            background-color: rgba(0, 102, 204, 0.8);
+        }
+
+        .download {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 150px;
+            font-size: 12px;
+        }
+
+        .download:hover {
+            background-color: #218838;
+        }
+
+        .password-bar {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .status i.online {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: green;
+        }
+        .size-status {
+            color: white; /* اللون الأزرق لحجم البيانات */
+        }
+    
+        .last-checked-container {
+    display: flex;
+    justify-content: center;  /* توسيط أفقي */
+    align-items: center;  /* توسيط عمودي */
+    width: 100%;
+    text-align: center;
+    position: fixed;  /* تثبيت العنصر في أسفل الصفحة */
+    bottom: 10px;  /* وضعه على بعد 10px من الأسفل */
+    left: 50%;
+    transform: translateX(-50%);  /* تصحيح التمركز */
+}
+
+.copyright-container {
+    display: flex;
+    justify-content: center;  /* توسيط أفقي */
+    align-items: center;  /* توسيط عمودي */
+    width: 100%;
+    text-align: center;
+    position: fixed;  /* تثبيت العنصر في أسفل الصفحة */
+    bottom: 40px;  /* وضعه على بعد 40px من الأسفل */
+    left: 50%;
+    transform: translateX(-50%);  /* تصحيح التمركز */
+    font-size: 14px;  /* حجم الخط */
+    color: white;  /* لون النص */
+}
+
+.logo {
+  transition: transform 0.3s ease-in-out; /* انتقال سلس */
+  cursor: pointer; /* تغيير شكل المؤشر */
+}
+
+.logo:hover {
+  transform: scale(1.2); /* تكبير اللوجو بنسبة 20% عند مرور الماوس */
+}
+
+
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHcMvRugU93ejZqWSH9mMLSk6TKk9D9X15XRiNk85OEgnxeI9ZWuAcpVbhTUrSoUWWCdf7xNd_XyIt8rPWGDEIyO7DTDENTmNwr7OK_yQqw695CXEbA34JdePj__sUqoYnGVTEXwYngFnkqyJ64davRoQ-6Ga7XqvrPa8vOhQdGmbXcUd_2eehNrd0q_k/s1600/PS4GAMEARABIC-2-22-2025%20%284%29.png"  class="logo"onclick="window.location.href='https://hanyf1985.github.io/PS4GAMEARABIC/'">
+        <div class="site-name">PS4GAMEARABIC</div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <div class="info-bar">
+        <em class="online">✅30/30 Online</em> | <span class="size-status">📂Size:59.38 GB 🔑hako: <span class="password">   الــــبــــاســورد🔑</span> </span>
+    </div>   
+    <div class="window"> 
+        <div class="info-bar2">
+            <em class="online">Uncharted 4 A Thiefs End  game CUSA00918  </em> 
+        </div>     
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 5%;">الحالة</th>
+                    <th style="width: 50%;">الملف</th>
+                    <th style="width: 27%;">الحجم</th>
+                    <th style="width: 20%;">تحميل</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>     
+            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part01
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/preermt3rbn4agb/hako-playable-u4atem.part01.rar', 1)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part02
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/347ek28alnakr6b/hako-playable-u4atem.part02.rar',2)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part03
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/qqc4n8lqw1s88pz/hako-playable-u4atem.part03.rar',3)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part04
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/2bat165uhvkd0g9/hako-playable-u4atem.part04.rar',4)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part05
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/1cal3ea92ead699/hako-playable-u4atem.part05.rar',5)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part06
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/013grxr7gcg36ca/hako-playable-u4atem.part06.rar',6)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                          <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part07
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/01gqgah5gvyjj2o/hako-playable-u4atem.part07.rar',7)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part08
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/bacanhiby00afz8/hako-playable-u4atem.part07.rar',8)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                              <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part09
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/y60k7kbdl49k6xd/hako-playable-u4atem.part09.rar',9)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part10
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/v2033hx61uzci9t/hako-playable-u4atem.part10.rar',10)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part11
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/1b8aw65k11ay7t6/hako-playable-u4atem.part11.rar',11)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part12
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/c5slw24t6ik621p/hako-playable-u4atem.part12.rar',12)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part13
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/bt2lyhk0os29dit/hako-playable-u4atem.part13.rar',13)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part14
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/2wbxz8jjy8chw3n/hako-playable-u4atem.part14.rar',14)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                          <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part15
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/4nuksp2i71wbwip/hako-playable-u4atem.part15.rar',15)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part16
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/b76e1bxek3rtqew/hako-playable-u4atem.part16.rar',16)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                              <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part17
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/mp67bl0x4q5m7fi/hako-playable-u4atem.part17.rar',17)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part18
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/jg30s20npuiwdcu/hako-playable-u4atem.part18.rar',18)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part19
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/yjb2egj3osd592m/hako-playable-u4atem.part19.rar',19)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part20
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/8st6bez3bqdab9x/hako-playable-u4atem.part20.rar',20)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part21
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/cz3hfc270mfd95u/hako-playable-u4atem.part21.rar',21)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part22
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/7nve0thfv5y9rvg/hako-playable-u4atem.part22.rar',22)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                          <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part23
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/b7xf0y6sqg7ph36/hako-playable-u4atem.part23.rar',23)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part24
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/d3m3ml0le3v6h4c/hako-playable-u4atem.part24.rar',24)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                              <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part25
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/ff4fdna1s5pxuo9/hako-playable-u4atem.part25.rar',25)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part26
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/zwi9rkaw787kjjl/hako-playable-u4atem.part26.rar',26)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part27
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/9v803k1q9oqwsj9/hako-playable-u4atem.part27.rar',27)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part28
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/prgyaxp3hv3jo13/hako-playable-u4atem.part28.rar',28)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part29
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>2.00G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/azl4qm1lh35b4yz/hako-playable-u4atem.part29.rar',29)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                                                                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="">
+                 hako-playable-u4atem.part30
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.38G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/h2dn3n970iwa47y/hako-playable-u4atem.part30.rar',30)" class="download" target="_blank" title="Download"> تحميل  </button>
+                </td>
+                </td>
+        </tbody>
+    </table>
+</div>
+
+</div>
+<div class="last-checked-container">
+    <small>Last checked at: <strong id="last-checked"></strong></small>
+</div>
+<div class="copyright-container">
+    Copyright &copy; 2025 | by Hanyf Mustafa
+</div>
+    
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false };
+        const currentDate = new Date().toLocaleString('en-GB', options).replace(",", " -");
+        document.getElementById('last-checked').innerText = currentDate;
+          // دالة لتحميل الرابط وتحديث الزر مع رقم الجزء
+    function handleDownload(button, url, partNumber) {
+        window.open(url, '_blank'); // فتح الرابط في نافذة جديدة
+        
+        // تحديث نص الزر مع إضافة علامة الصح ورقم الجزء
+        button.innerHTML = `✔ ${partNumber}`;
+        button.disabled = true; // تعطيل الزر بعد النقر
+
+        // يمكنك إضافة بعض الأنماط لتغيير شكل الزر عند تعطيله (اختياري)
+        button.style.backgroundColor = '#6c757d'; // تغيير اللون عند تعطيل الزر
+        button.style.cursor = 'not-allowed'; // تغيير المؤشر
+    }
+    </script>
+
+</body>
+</html>

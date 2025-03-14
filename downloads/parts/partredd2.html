@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Dead Redemption 2 Game</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: url('https://i.blogs.es/0909e3/22d5eb03beb6c11b403050ac006039aa/1366_2000.jpeg');
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .header .logo {
+            height: 40px;
+           
+        }
+
+
+        .header .site-name {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .info-bar {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .info-bar2 {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .window {
+            position: relative;
+            min-height: calc(100vh - 100px);
+            width: 100%;
+            box-sizing: border-box;
+            padding: 90px 20px 100px;
+        }
+
+        table {
+            margin: 60px auto;
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        th {
+            background-color: rgba(0, 102, 204, 0.8);
+        }
+
+        .download {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 150px;
+            font-size: 12px;
+        }
+
+        .download:hover {
+            background-color: #218838;
+        }
+
+        .password-bar {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .status i.online {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: green;
+        }
+        .size-status {
+            color: white; /* اللون الأزرق لحجم البيانات */
+        }
+        .last-checked-container {
+    display: flex;
+    justify-content: center;  /* توسيط أفقي */
+    align-items: center;  /* توسيط عمودي */
+    width: 100%;
+    text-align: center;
+    position: fixed;  /* تثبيت العنصر في أسفل الصفحة */
+    bottom: 10px;  /* وضعه على بعد 10px من الأسفل */
+    left: 50%;
+    transform: translateX(-50%);  /* تصحيح التمركز */
+}
+
+.copyright-container {
+    display: flex;
+    justify-content: center;  /* توسيط أفقي */
+    align-items: center;  /* توسيط عمودي */
+    width: 100%;
+    text-align: center;
+    position: fixed;  /* تثبيت العنصر في أسفل الصفحة */
+    bottom: 40px;  /* وضعه على بعد 40px من الأسفل */
+    left: 50%;
+    transform: translateX(-50%);  /* تصحيح التمركز */
+    font-size: 14px;  /* حجم الخط */
+    color: white;  /* لون النص */
+}
+
+.logo {
+  transition: transform 0.3s ease-in-out; /* انتقال سلس */
+  cursor: pointer; /* تغيير شكل المؤشر */
+}
+
+.logo:hover {
+  transform: scale(1.2); /* تكبير اللوجو بنسبة 20% عند مرور الماوس */
+}
+
+
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHcMvRugU93ejZqWSH9mMLSk6TKk9D9X15XRiNk85OEgnxeI9ZWuAcpVbhTUrSoUWWCdf7xNd_XyIt8rPWGDEIyO7DTDENTmNwr7OK_yQqw695CXEbA34JdePj__sUqoYnGVTEXwYngFnkqyJ64davRoQ-6Ga7XqvrPa8vOhQdGmbXcUd_2eehNrd0q_k/s1600/PS4GAMEARABIC-2-22-2025%20%284%29.png"  class="logo"onclick="window.location.href='https://hanyf1985.github.io/PS4GAMEARABIC/'">
+        <div class="site-name">PS4GAMEARABIC</div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <div class="info-bar">
+        <em class="online">✅42/42 Online</em> | <span class="size-status">📂Size:79.70GB 🔑  hako : <span class="password">   الــــبــــاســورد🔑</span> </span>
+    </div>   
+    <div class="window"> 
+        <div class="info-bar2">
+            <em class="online">Red Dead Redemption 2 Game CUSA08519 </em> 
+        </div>     
+        <table>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <th style="width: 5%;">الحالة</th>
+                    <th style="width: 50%;">الملف</th>
+                    <th style="width: 27%;">الحجم</th>
+                    <th style="width: 20%;">تحميل</th>
+                </tr>
+            </thead>
+            <tbody>
+             <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part01.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/mhjwf6mq3piwcdn/Red.Dead.Redemption.2.PS4-DUPLEX.part01.rar',1)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part02.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/ck1aq4kkpt1zuuy/Red.Dead.Redemption.2.PS4-DUPLEX.part02.rar',2)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+              <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part03.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/ejl5hxluib1ahjt/Red.Dead.Redemption.2.PS4-DUPLEX.part03.rar',3)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part04.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/6okgejqiqhhkseg/Red.Dead.Redemption.2.PS4-DUPLEX.part04.rar',4)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part05.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/hymet13648r67k0/Red.Dead.Redemption.2.PS4-DUPLEX.part05.rar',5)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part06.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/h5scnbvob0yf3xv/Red.Dead.Redemption.2.PS4-DUPLEX.part06.rar',6)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part07.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/yatbb5kxofc61lj/Red.Dead.Redemption.2.PS4-DUPLEX.part07.rar',7)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part08.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/us5lmz50yg3dnre/Red.Dead.Redemption.2.PS4-DUPLEX.part08.rar',8)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                          <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part09.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/z6hqck4wxhlrp29/Red.Dead.Redemption.2.PS4-DUPLEX.part09.rar',9)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part10.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/e0x79lg2cub4ojt/Red.Dead.Redemption.2.PS4-DUPLEX.part10.rar',10)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part11.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/2ivrfjmbrk6pxcp/Red.Dead.Redemption.2.PS4-DUPLEX.part11.rar',11)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part12.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/3gulkbn5fg65op3/Red.Dead.Redemption.2.PS4-DUPLEX.part12.rar',12)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+              <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part13.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/dvroqpqdx5d46sy/Red.Dead.Redemption.2.PS4-DUPLEX.part13.rar',13)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part14.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/i8gtr3odg2bza8g/Red.Dead.Redemption.2.PS4-DUPLEX.part14.rar',14)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part15.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/w1cpckdyybq40gq/Red.Dead.Redemption.2.PS4-DUPLEX.part15.rar',15)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part16.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/necafidwu04wqn7/Red.Dead.Redemption.2.PS4-DUPLEX.part16.rar',169)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part17.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/xz9gktf60f6nz5k/Red.Dead.Redemption.2.PS4-DUPLEX.part17.rar',17)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part18.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/fkqsaiv2r4v65dy/Red.Dead.Redemption.2.PS4-DUPLEX.part18.rar',18)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                          <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part19.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/8em7cb7fti51vkd/Red.Dead.Redemption.2.PS4-DUPLEX.part19.rar',19)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part20.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/cu48chsbd3l128u/Red.Dead.Redemption.2.PS4-DUPLEX.part20.rar',20)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part21.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/43plowhh9796p5h/Red.Dead.Redemption.2.PS4-DUPLEX.part21.rar',21)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part22.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/5m9n9ml342ncdgz/Red.Dead.Redemption.2.PS4-DUPLEX.part22.rar',22)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+              <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part23.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/qg79k1rwlyqh749/Red.Dead.Redemption.2.PS4-DUPLEX.part23.rar',23)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part24.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/cdblyxxxbwd16lt/Red.Dead.Redemption.2.PS4-DUPLEX.part24.rar',24)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                  <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part25.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/io85klofb6o61ys/Red.Dead.Redemption.2.PS4-DUPLEX.part25.rar',25)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part26.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/5vm2c85nzu2skba/Red.Dead.Redemption.2.PS4-DUPLEX.part26.rar',26)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                      <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part27.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/ecehubdge98qor3/Red.Dead.Redemption.2.PS4-DUPLEX.part27.rar',27)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                        <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part28.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/w3g9ao8y8w9m5zs/Red.Dead.Redemption.2.PS4-DUPLEX.part28.rar',28)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                          <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part29.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/axe5w8tmigd40s0/Red.Dead.Redemption.2.PS4-DUPLEX.part29.rar',29)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part30.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/mz5j81pma1ba6j4/Red.Dead.Redemption.2.PS4-DUPLEX.part30.rar',30)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                              
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part31.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/pmrkkrjtotx6hx9/Red.Dead.Redemption.2.PS4-DUPLEX.part31.rar',31)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part32.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/6pd47evi6ydfplg/Red.Dead.Redemption.2.PS4-DUPLEX.part32.rar',32)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part33.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/piejxmuvwvqude0/Red.Dead.Redemption.2.PS4-DUPLEX.part33.rar',33)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                    <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part34.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/nlyuiuidsk0o4ee/Red.Dead.Redemption.2.PS4-DUPLEX.part34.rar',34)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part35.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/b81q4eyapsp31jq/Red.Dead.Redemption.2.PS4-DUPLEX.part35.rar',35)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part36.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/qqui1aecf26atqb/Red.Dead.Redemption.2.PS4-DUPLEX.part36.rar',36)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part37.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/vkqwozipkehscon/Red.Dead.Redemption.2.PS4-DUPLEX.part37.rar',37)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part38.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/fav5nalpuzdgigx/Red.Dead.Redemption.2.PS4-DUPLEX.part38.rar',38)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part39.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/tfxt4his30nyt23/Red.Dead.Redemption.2.PS4-DUPLEX.part39.rar',39)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part40.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/4al3epa9fe6vuoz/Red.Dead.Redemption.2.PS4-DUPLEX.part40.rar',40)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                            <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part41.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.90G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/r8puigkgo0c0g8m/Red.Dead.Redemption.2.PS4-DUPLEX.part41.rar',41)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+                               <tr class="kwj3">
+                <td class="status"><i class="online small"></i></td>
+                <td title="k">
+                     Red.Dead.Redemption.2.PS4-DUPLEX.part42.rar
+                    <span><a href="" target="_blank" class="external_link"></a></span>
+                </td>
+                <td>1.80G</td>
+                <td>
+                    <button id="C4BEB47AC4" onclick="handleDownload(this,'https://www.mediafire.com/file/7d6y9yu9ktksnpn/Red.Dead.Redemption.2.PS4-DUPLEX.part42.rar',42)" class="download" target="_blank" title="Download">تحميل</button>
+                </td>
+            </tr>
+        </thead>
+        <tbody>   
+</div>
+<div class="last-checked-container">
+    <small>Last checked at: <strong id="last-checked"></strong></small>
+</div>
+<div class="copyright-container">
+    Copyright &copy; 2025 | by Hanyf Mustafa
+</div>
+
+
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false };
+        const currentDate = new Date().toLocaleString('en-GB', options).replace(",", " -");
+        document.getElementById('last-checked').innerText = currentDate;
+          // دالة لتحميل الرابط وتحديث الزر مع رقم الجزء
+    function handleDownload(button, url, partNumber) {
+        window.open(url, '_blank'); // فتح الرابط في نافذة جديدة
+        
+        // تحديث نص الزر مع إضافة علامة الصح ورقم الجزء
+        button.innerHTML = `✔ ${partNumber}`;
+        button.disabled = true; // تعطيل الزر بعد النقر
+
+        // يمكنك إضافة بعض الأنماط لتغيير شكل الزر عند تعطيله (اختياري)
+        button.style.backgroundColor = '#6c757d'; // تغيير اللون عند تعطيل الزر
+        button.style.cursor = 'not-allowed'; // تغيير المؤشر
+    }
+    </script>
+
+</body>
+</html>
