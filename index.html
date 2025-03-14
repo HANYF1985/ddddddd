@@ -24,18 +24,21 @@
           padding: 0;
         }
     
-      /* تصميم الهيدر */
-      .header {
+     /* الهيدر */
+.header {
+    position: relative;
     max-width: 1200px; /* نفس عرض .container */
     width: 100%;
-    margin: 0 auto; /* يجعله في المنتصف */
+    margin: 0 auto; /* يجعل الهيدر يتوسط الصفحة */
     padding: 15px;
     background: #0e1329;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* يمنع العناصر من التحرك لسطر جديد */
+    flex-wrap: nowrap; /* يمنع العناصر من النزول إلى سطر جديد */
+    box-sizing: border-box; /* يحافظ على تناسق العرض */
 }
+
 
 /* اللوجو */
 .logo img {
@@ -143,8 +146,10 @@
             border-radius: 15px;
         }
 
-        .container {
-    width: 1200px; /* عرض ثابت لا يتغير */
+      /* الحاوية */
+.container {
+    max-width: 1200px; /* عرض ثابت لا يتغير */
+    width: 100%;
     margin: 20px auto;
     padding: 15px;
     background: #140e0e;
@@ -152,6 +157,7 @@
     box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
     column-gap: var(--pcrgap);
     overflow: hidden; /* يمنع التمرير داخل العنصر */
+    box-sizing: border-box; /* يحافظ على تناسق الحجم */
 }
 
 
